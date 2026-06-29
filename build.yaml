@@ -13,10 +13,12 @@
 #
 ---
 include:
-  - board: nice_nano/nrf52840/zmk
-    shield: cornix_dongle_adapter cornix_dongle_eyelash dongle_display
-    snippet: studio-rpc-usb-uart nrf52840-nosd
-    artifact-name: cornix_dongle_nosd
+  # 일반동글용
+  #- board: nice_nano/nrf52840/zmk
+  #  shield: cornix_dongle_adapter cornix_dongle_eyelash dongle_display
+  #  snippet: studio-rpc-usb-uart nrf52840-nosd
+  #  artifact-name: cornix_dongle_nosd
+
   # dongle screen not yet supports zephyr4
   # - board: seeeduino_xiao_ble
   #   shield: cornix_dongle_adapter dongle_screen
@@ -26,6 +28,7 @@ include:
   #   shield: cornix_dongle_adapter dongle_screen
   #   snippet: studio-rpc-usb-uart
   #   artifact-name: cornix_dongle_zds_nano
+  # 동글 미사용시 용
   - board: cornix_left
     # shield: cornix_indicator
     artifact-name: cornix_left_default_nosd
@@ -38,12 +41,16 @@ include:
     # shield: cornix_indicator
     artifact-name: cornix_right_nosd
 
-  - board: cornix_right
-    shield: settings_reset
-    snippet: studio-rpc-usb-uart nrf52840-nosd
-    artifact-name: cornix_reset
-
   - board: nice_nano/nrf52840/zmk
     shield: settings_reset
     snippet: studio-rpc-usb-uart nrf52840-nosd
     artifact-name: reset_nicenano_nosd
+
+  # nrf52840dongle usb용
+  - board: nrf52840dongle/nrf52840/zmk
+    shield: cornix_dongle_adapter cornix_dongle_eyelash dongle_display
+    artifact-name: cornix_dongle_bin
+
+  - board: nrf52840dongle/nrf52840/zmk
+    shield: settings_reset
+    artifact-name: reset_cornix_dongle_bin
